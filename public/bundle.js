@@ -42,11 +42,46 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _nexus_keyboard = __webpack_require__(1);
+	
+	var _nexus_keyboard2 = _interopRequireDefault(_nexus_keyboard);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// Prints to the devtools console
+	// console.log(createKeyboard);
+	
+	
+	var button = document.getElementById('keyboard-btn');
+	button.addEventListener('click', _nexus_keyboard2.default);
+
+/***/ },
+/* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
 	
-	console.log('hello');
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = createKeyboard;
+	function createKeyboard() {
+		// create keyboard container
+		var keyDiv = document.createElement('div');
+		keyDiv.setAttribute('id', 'keyboard');
+		console.log(nx);
+		// create keyboard
+		nx.add('keyboard');
+	
+		// mount to the DOM
+		var instDiv = document.getElementById('instrument');
+		instDiv.append(keyDiv);
+		keyDiv.append(keyboard);
+	}
 
 /***/ }
 /******/ ]);
