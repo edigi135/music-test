@@ -1,7 +1,10 @@
 'use strict';
 
-import SampleComponent from './components/sample-component';
+import createKeyboard from './components/nexus_keyboard';
 
-export default () => {
-	console.log(SampleComponent);
-};
+// Prints to the devtools console
+// console.log(createKeyboard);
+
+
+let button = document.getElementById('keyboard-btn');
+button.addEventListener('click', createKeyboard);
