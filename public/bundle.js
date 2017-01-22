@@ -46,17 +46,25 @@
 
 	'use strict';
 	
+	// Import components
+	
 	var _nexus_keyboard = __webpack_require__(1);
 	
 	var _nexus_keyboard2 = _interopRequireDefault(_nexus_keyboard);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var button = document.getElementById('keyboard-btn');
-	// button.addEventListener('click', createKeyboard);
-	
+	// Set up jQuery
 	$(document).ready(function () {
-	    $('select').material_select();
+	  // Initialize material select
+	  $('select').material_select();
+	  // Create instruments:
+	  // createKeyboard();
+	  $('select').change(function () {
+	    $('select option:selected').each(function () {
+	      (0, _nexus_keyboard2.default)();
+	    });
+	  });
 	});
 
 /***/ },
@@ -66,20 +74,18 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+			value: true
 	});
 	exports.default = createKeyboard;
 	function createKeyboard() {
-	  // create keyboard container
-	  var keyDiv = document.createElement('div');
-	  keyDiv.setAttribute('id', 'keyboard');
+			// Create Nexus keyboard widget
+			var keyboard = window.nx.add('keyboard');
 	
-	  // create keyboard
-	  var keyboard = window.nx.add('keyboard');
+			// Create div
+			var newDiv = document.createElement('div');
+			newDiv.setAttribute('id', 'instrument-container');
 	
-	  // mount to the DOM
-	  var instrumentDiv = document.getElementById('instrument');
-	  instrumentDiv.append(keyDiv);
+			$('#instrument').append(newDiv);
 	}
 
 /***/ }

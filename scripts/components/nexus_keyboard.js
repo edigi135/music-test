@@ -1,14 +1,13 @@
 'use strict';
 
 export default function createKeyboard() {
-  // create keyboard container
-  let keyDiv = document.createElement('div');
-  keyDiv.setAttribute('id', 'keyboard');
-  
-  // create keyboard
-  let keyboard = window.nx.add('keyboard');
-  
-  // mount to the DOM
-  let instrumentDiv = document.getElementById('instrument');
-  instrumentDiv.append(keyDiv);
+  // Create Nexus keyboard widget
+	let keyboard = window.nx.add('keyboard');
+
+	// Create div
+	let newDiv = document.createElement('div');
+	newDiv.setAttribute('id', 'instrument-container');
+
+	$('#instrument').append(newDiv);
+	
 }

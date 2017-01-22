@@ -1,10 +1,17 @@
 'use strict';
 
+// Import components
 import createKeyboard from './components/nexus_keyboard';
 
-let button = document.getElementById('keyboard-btn');
-// button.addEventListener('click', createKeyboard);
-
+// Set up jQuery
 $(document).ready(function() {
-    $('select').material_select();
+  // Initialize material select
+  $('select').material_select();
+  // Create instruments:
+  // createKeyboard();
+  $('select').change(function() {
+    $('select option:selected').each(function() {
+      createKeyboard();
+    });
+  });
 });
