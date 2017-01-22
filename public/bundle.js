@@ -52,12 +52,12 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// Prints to the devtools console
-	// console.log(createKeyboard);
-	
-	
 	var button = document.getElementById('keyboard-btn');
-	button.addEventListener('click', _nexus_keyboard2.default);
+	// button.addEventListener('click', createKeyboard);
+	
+	$(document).ready(function () {
+	    $('select').material_select();
+	});
 
 /***/ },
 /* 1 */
@@ -66,21 +66,20 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	exports.default = createKeyboard;
 	function createKeyboard() {
-		// create keyboard container
-		var keyDiv = document.createElement('div');
-		keyDiv.setAttribute('id', 'keyboard');
-		console.log(nx);
-		// create keyboard
-		nx.add('keyboard');
+	  // create keyboard container
+	  var keyDiv = document.createElement('div');
+	  keyDiv.setAttribute('id', 'keyboard');
 	
-		// mount to the DOM
-		var instDiv = document.getElementById('instrument');
-		instDiv.append(keyDiv);
-		keyDiv.append(keyboard);
+	  // create keyboard
+	  var keyboard = window.nx.add('keyboard');
+	
+	  // mount to the DOM
+	  var instrumentDiv = document.getElementById('instrument');
+	  instrumentDiv.append(keyDiv);
 	}
 
 /***/ }
