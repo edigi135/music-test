@@ -48,7 +48,7 @@
 	
 	// Import components
 	
-	var _nexus = __webpack_require__(3);
+	var _nexus = __webpack_require__(1);
 	
 	var _nexus2 = _interopRequireDefault(_nexus);
 	
@@ -62,9 +62,7 @@
 	});
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */
+/* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -75,14 +73,10 @@
 	
 	exports.default = window.nx.onload = function () {
 	  // Matrix
-	  matrix1.col = 8;
+	  matrix1.col = 16;
 	  matrix1.row = 8;
 	  setInterval(matrix1.life, 180);
 	  matrix1.init();
-	
-	  // Matrix Slider Control
-	  slider1.hslider = true;
-	  slider1.draw();
 	};
 
 /***/ }
