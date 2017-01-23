@@ -7,7 +7,4 @@ export default function createKeyboard() {
 	// Create div
 	let newDiv = document.createElement('div');
 	newDiv.setAttribute('id', 'instrument-container');
-
-	$('#instrument').append(newDiv);
-	
 }
