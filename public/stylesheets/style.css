@@ -1,5 +1,13 @@
-#keyboard1 {
-  height: 100px;
-  width: 600px; }
+html {
+  box-sizing: border-box; }
+
+a.brand-logo {
+  padding-left: 20px; }
+
+.main-container,
+#matrix,
+#keyboard,
+#typewriter {
+  margin-top: 40px; }
 
 /*# sourceMappingURL=style.css.map */

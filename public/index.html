@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Tone.js / Nexus UI Demo</title>
+  <title>{{ Beat | Machine }}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="Demo project with jQuery">
@@ -18,44 +18,159 @@
 <body>
   <div id="main">
     <!-- NAVIGATION -->
-    <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li class="divider"></li>
-      <li><a href="#!">three</a></li>
-    </ul>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <!-- Dropdown Trigger -->
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <!-- END NAVIGATION -->
-  <!-- INSTRUMENT SECTION -->
-  <div class="container">
-    <div class="row">
-      <div id="instrument-select" class="input-field col s6 offset-s3">
-        <select>
-          <option value="" disabled selected>Choose Below</option>
-          <option value="keyboard">Keyboard</option>
-          <option value="matrix">Matrix</option>
-          <option value="drum-pad">Drum Pad</option>
-        </select>
-        <label>Choose an Instrument</label>
-      </div>
-      <div class="row">
-        <div id="instruments"></div>
-      </div>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper left-align deep-purple lighten-1">
+          <a href="#!" class="brand-logo">{{ Beat | Machine }}</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html"><i class="material-icons">skip_previous</i></a></li>
+            <li><a href="badges.html"><i class="material-icons">play_arrow</i></a></li>
+            <li><a href="badges.html"><i class="material-icons">pause</i></a></li>
+            <li><a href="mobile.html"><i class="material-icons">skip_next</i></a></li>
+            <li><a href="sass.html"><i class="material-icons">volume_off</i></a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html"><i class="material-icons">skip_previous</i></a></li>
+            <li><a href="badges.html"><i class="material-icons">play_arrow</i></a></li>
+            <li><a href="badges.html"><i class="material-icons">pause</i></a></li>
+            <li><a href="mobile.html"><i class="material-icons">skip_next</i></a></li>
+            <li><a href="sass.html"><i class="material-icons">volume_off</i></a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </div>
+  <!-- END NAVIGATION -->
+  <div class="container">
+    <div class="main-container">
+      <div class="row">
+        <h4 class="center-align">{{ Global | Controls}}</h4>
+        <div id="matrix-controls">
+          <div class="input-field col m4 s12">
+            <select id="scale-select">
+              <option value="1">Major</option>
+              <option value="2">Minor-Major</option>
+              <option value="3">Harmonic Minor</option>
+              <option value="4">Harmonic Major</option>
+              <option value="5">Pentatonic</option>
+            </select>
+            <label for="scale-select">Scale</label>
+          </div>
+          <div class="input-field col m4 s12">
+            <select id="key-select">
+              <option value="1">A</option>
+              <option value="2">A#</option>
+              <option value="3">B</option>
+              <option value="4">C</option>
+              <option value="5">C#</option>
+              <option value="6">D</option>
+              <option value="7">D#</option>
+              <option value="8">E</option>
+              <option value="9">F</option>
+              <option value="10">F#</option>
+              <option value="11">G</option>
+              <option value="12">G#</option>
+            </select>
+            <label for="key-select">Key</label>
+          </div>
+          <div class="col m4 s12">
+            <label for="fader">BPM: 120</label>
+            <input type="range" min="0" max="220" value="120" id="fader">
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <hr>
+      <h4 class="right-align">{{ Chord | Builder }}</h4>
+      <div id="matrix" class="center-align">
+        <canvas nx="matrix" height="400" width="400" label="Chord Backdrop"></canvas>
+        <br>
+        <br>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <div class="row">
+      <h4 class="right-align">{{ Keyboard }}</h4>
+      <div>
+        <div id="keyboard-dials" class="col s12 m6">
+          <canvas nx="dial" min="0" max="128"></canvas>
+          <canvas nx="dial" min="0" max="128"></canvas>
+          <canvas nx="dial" min="0" max="128"></canvas>
+          <canvas nx="dial" min="0" max="128"></canvas>
+          <canvas nx="dial" min="0" max="128"></canvas>
+          <canvas nx="dial" min="0" max="128"></canvas>
+        </div>
+        <div id="keyboard-controls">
+          <div class="input-field col m6 s12">
+            <select id="instrument-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <label for="instrument-select">Instrument</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas nx="keyboard" height="150" width="700" label="Keyboard" class="center-align"></canvas>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <div class="row">
+      <h4>{{ 4-Octave | Typewriter }}</h4>
+      <div class="input-field col m4 s12 left-align">
+        <select id="scale-select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label for="scale-select">Instrument</label>
+      </div>
+      <div id="typewriter" class="center-align">
+        <canvas nx="typewriter" height="120" width="400" label="Typewriter"></canvas>
+      </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
   </div>
+  </div>
+  </div>
+  <footer class="page-footer deep-purple lighten-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2017 Evan DiGiambattista
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
   <script async defer src=/public/bundle.js></script>
 </body>
 

@@ -48,45 +48,42 @@
 	
 	// Import components
 	
-	var _nexus_keyboard = __webpack_require__(1);
+	var _nexus = __webpack_require__(3);
 	
-	var _nexus_keyboard2 = _interopRequireDefault(_nexus_keyboard);
+	var _nexus2 = _interopRequireDefault(_nexus);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// Set up jQuery
 	$(document).ready(function () {
 	  // Initialize material select
 	  $('select').material_select();
-	  // Create instruments:
-	  // createKeyboard();
-	  $('select').change(function () {
-	    $('select option:selected').each(function () {
-	      (0, _nexus_keyboard2.default)();
-	    });
-	  });
+	  // Collapse navbar
+	  $(".button-collapse").sideNav();
 	});
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ function(module, exports) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-			value: true
+	  value: true
 	});
-	exports.default = createKeyboard;
-	function createKeyboard() {
-			// Create Nexus keyboard widget
-			var keyboard = window.nx.add('keyboard');
 	
-			// Create div
-			var newDiv = document.createElement('div');
-			newDiv.setAttribute('id', 'instrument-container');
+	exports.default = window.nx.onload = function () {
+	  // Matrix
+	  matrix1.col = 8;
+	  matrix1.row = 8;
+	  setInterval(matrix1.life, 180);
+	  matrix1.init();
 	
-			$('#instrument').append(newDiv);
-	}
+	  // Matrix Slider Control
+	  slider1.hslider = true;
+	  slider1.draw();
+	};
 
 /***/ }
 /******/ ]);
